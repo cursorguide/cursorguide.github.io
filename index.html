@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>Cursor Guide</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#overview" class="nav-link">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#llm-help" class="nav-link">LLM Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#notebooks" class="nav-link">Notebooks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cursor-yolo" class="nav-link">Cursor YOLO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cursor-rules" class="nav-link">Cursor Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tips" class="nav-link">Tips & Tricks</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cursor Guide for<br><span class="highlight">Everyone</span></h1>
+                    <p class="hero-subtitle">Your comprehensive guide to mastering Cursor AI for your daily workflows</p>
+                    <div class="hero-buttons">
+                        <a href="#overview" class="btn btn-primary">Get Started</a>
+                        <a href="#quick-reference" class="btn btn-secondary">Quick Reference</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line"><span class="comment"># Ask Cursor AI for help</span></div>
+                            <div class="code-line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div>
+                            <div class="code-line"><span class="variable">df</span> = pd.read_csv(<span class="string">'margiela.csv'</span>)</div>
+                            <div class="code-line typing-animation"><span class="comment"># Cursor suggests the next line...</span></div>
+                            <div class="easter-egg-tooltip code-easter-egg" data-message="psst... try double-clicking me 👀"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section-title">What is Cursor?</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Editor</h3>
+                        <p>Cursor is an AI-powered code editor that helps you write, edit, and debug code faster with intelligent suggestions.</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Chat Interface</h3>
+                        <p>Ask questions, get explanations, and receive code suggestions through natural language conversations.</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Smart Completions</h3>
+                        <p>Get intelligent code completions that understand your context and coding patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="llm-help" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Getting LLM Help</h2>
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>How to Use Cursor's AI Assistant</h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Open Chat Panel</h4>
+                                    <p>Press <kbd>Ctrl+L</kbd></p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Ask Your Question</h4>
+                                    <p>Type your question in natural language. Be specific about what you want to accomplish.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Review & Apply</h4>
+                                    <p>Review the AI's response and click "Apply" to implement suggested changes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="chat-example">
+                            <div class="chat-header">
+                                <i class="fas fa-comments"></i>
+                                <span>Cursor Chat</span>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message user">
+                                    <div class="message-content">
+                                        Write a basic Python script that opens Supreme’s shop at a scheduled time, searches for a specific item and size, and simulates adding it to the cart
+                                        </div>
+
+                                <div class="message ai">
+                                    <div class="message-content">
+                                        <p>Here's how to set up a Supreme bot to automate the purchase process during a product drop:</p>
+                                        <div class="code-block">
+                                            <code>import requests<br>import time<br><br># Supreme drop time<br>drop_time = "11:00:00"<br><br># Target that Box Logo hoodie<br>item_name = "Box Logo Hooded Sweatshirt"<br>size = "Large"<br><br># Cook that drop in milliseconds 😤<br>while True:<br>    if time.strftime("%H:%M:%S") == drop_time:<br>        cop_supreme(item_name, size)<br>        print("SECURED THE BAG! 💰")</code>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="notebooks" class="section">
+            <div class="container">
+                <h2 class="section-title">Working with Jupyter Notebooks</h2>
+                <div class="notebook-grid">
+                    <div class="notebook-card">
+                        <div class="card-header">
+                            <i class="fas fa-book"></i>
+                            <h3>Setting Up Notebooks</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Install Python extension in VS Code</li>
+                                <li><i class="fas fa-check"></i> Install Jupyter extension</li>
+                                <li><i class="fas fa-check"></i> Create new .ipynb file</li>
+                                <li><i class="fas fa-check"></i> Select Python kernel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="notebook-card">
+                        <div class="card-header">
+                            <i class="fas fa-play"></i>
+                            <h3>Running Cells</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="keyboard-shortcut">
+                                <kbd>Shift + Enter</kbd>
+                                <span>Run current cell and move to next</span>
+                            </div>
+                            <div class="keyboard-shortcut">
+                                <kbd>Ctrl + Enter</kbd>
+                                <span>Run current cell</span>
+                            </div>
+                            <div class="keyboard-shortcut">
+                                <kbd>Alt + Enter</kbd>
+                                <span>Run cell and insert new cell below</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notebook-card">
+                        <div class="card-header">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Help in Notebooks</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Cursor AI works seamlessly with Jupyter notebooks:</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Get code suggestions in cells</li>
+                                <li><i class="fas fa-check"></i> Ask questions about data analysis</li>
+                                <li><i class="fas fa-check"></i> Debug errors in notebook cells</li>
+                                <li><i class="fas fa-check"></i> Generate visualizations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="cursor-yolo" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Cursor YOLO Mode</h2>
+                <div class="yolo-content">
+                    <div class="yolo-explanation">
+                        <h3>What is YOLO Mode?</h3>
+                        <p>YOLO (You Only Live Once) mode allows Cursor to make changes to your code automatically without asking for confirmation. This speeds up development but requires careful use.</p>
+
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <h4>Use with Caution</h4>
+                                <p>YOLO mode makes automatic changes. Always review changes and use version control.</p>
+                                <div class="easter-egg-tooltip" data-message="YOLO = You Obviously Love Overthinking 😏"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="yolo-usage">
+                        <h3>How to Use YOLO Mode</h3>
+                        <div class="usage-steps">
+                            <div class="usage-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-toggle-on"></i>
+                                </div>
+                                <div class="step-text">
+                                    <h4>Enable YOLO Mode</h4>
+                                    <p>Type <code>@yolo</code> in the chat or enable it in settings</p>
+                                </div>
+                            </div>
+                            <div class="usage-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <div class="step-text">
+                                    <h4>Give Clear Instructions</h4>
+                                    <p>Be specific about what changes you want Cursor to make</p>
+                                </div>
+                            </div>
+                            <div class="usage-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="step-text">
+                                    <h4>Review Changes</h4>
+                                    <p>Always check the changes made by YOLO mode before proceeding</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="cursor-rules" class="section">
+            <div class="container">
+                <h2 class="section-title">Cursor Rules</h2>
+                <div class="rules-content">
+                    <div class="rules-explanation">
+                        <h3>What are Cursor Rules?</h3>
+                        <p>Cursor Rules are custom instructions that help the AI understand your coding preferences, project structure, and specific requirements. They ensure consistent suggestions across your project.</p>
+                    </div>
+
+                    <div class="rules-setup">
+                        <h3>Setting Up Cursor Rules</h3>
+                        <div class="setup-steps">
+                            <div class="setup-step">
+                                <h4>1. Create .cursorrules file</h4>
+                                <p>Create a <code>.cursorrules</code> file in your project root</p>
+                            </div>
+                            <div class="setup-step">
+                                <h4>2. Define Your Rules</h4>
+                                <div class="rules-example">
+                                    <div class="code-header">
+                                        <span>.cursorrules</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Rules
+
+## Code Style
+- Use Python 3.9+ syntax
+- Follow PEP 8 style guide
+- Use type hints for function parameters and return values
+- Use descriptive variable names
+
+## Data Analysis
+- Always use pandas for data manipulation
+- Include error handling for file operations
+- Document data transformations with comments
+- Use matplotlib/seaborn for visualizations
+
+## Jupyter Notebooks
+- Use markdown cells to explain analysis steps
+- Clear output before committing notebooks
+- Include data source information in first cell
+
+## File Structure
+- Store data files in /data directory
+- Save outputs in /outputs directory
+- Keep notebooks in /notebooks directory</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="tips" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Tips & Tricks for Beginners</h2>
+                <div class="tips-grid">
+                    <div class="tip-card shortcuts-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <h3>Windows Shortcuts Cheat Sheet</h3>
+
+                        <div class="shortcuts-section">
+                            <h4>🧠 AI-Specific (Cursor)</h4>
+                            <div class="shortcuts">
+                                <div class="shortcut">
+                                    <kbd>Ctrl+Shift+A</kbd>
+                                    <span>🪄 Ask AI (chat on selected code)</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+Shift+Enter</kbd>
+                                    <span>🧹 Fix code with AI</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+K → Ctrl+E</kbd>
+                                    <span>✍️ Edit with AI (Inline)</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+Shift+C</kbd>
+                                    <span>💬 Start new chat</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Tab</kbd>
+                                    <span>💡 Accept AI suggestion</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Esc</kbd>
+                                    <span>❌ Dismiss AI suggestion</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-section">
+                            <h4>🧑‍💻 Editor Basics</h4>
+                            <div class="shortcuts">
+                                <div class="shortcut">
+                                    <kbd>Ctrl+S</kbd>
+                                    <span>Save file</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+P</kbd>
+                                    <span>Open file</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+Shift+F</kbd>
+                                    <span>Search files</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+B</kbd>
+                                    <span>Toggle sidebar</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>F2</kbd>
+                                    <span>Rename symbol</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Shift+Alt+F</kbd>
+                                    <span>Format document</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-section">
+                            <h4>🧭 Navigation & More</h4>
+                            <div class="shortcuts">
+                                <div class="shortcut">
+                                    <kbd>F12</kbd>
+                                    <span>Go to definition</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Alt+←/→</kbd>
+                                    <span>Go back/forward</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+Shift+P</kbd>
+                                    <span>Command palette</span>
+                                </div>
+                                <div class="shortcut">
+                                    <kbd>Ctrl+F2</kbd>
+                                    <span>Select all occurrences</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Version Control Basics</h3>
+                        <ul class="practices-list">
+                            <li>Always use Git - commit often and keep changes small</li>
+                            <li>Review every AI suggestion before applying</li>
+                            <li>Use branches for experiments</li>
+                            <li>Never let AI edit large amounts of existing code</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Smart Prompting</h3>
+                        <ul class="practices-list">
+                            <li>Start with "Think step-by-step before coding..."</li>
+                            <li>Use <code>@codebase</code> to reference files</li>
+                            <li>Ask "How would you improve this?" for better code</li>
+                            <li>Be specific about what you want to accomplish</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Setup & Organization</h3>
+                        <ul class="practices-list">
+                            <li>Create <code>.cursorrules</code> for coding standards</li>
+                            <li>Set up a <code>prompts/</code> folder for reusable prompts</li>
+                            <li>Use Composer for multi-step tasks</li>
+                            <li>Reset chat when context gets too long</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Advanced Techniques</h3>
+                        <ul class="practices-list">
+                            <li>Use YOLO mode for quick prototyping (with Git branches)</li>
+                            <li>Ask Cursor to be your mentor, not just assistant</li>
+                            <li>Use scratchpad for complex logic planning</li>
+                            <li>Let Cursor auto-select models or choose based on task</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Common Questions</h3>
+                        <div class="faq">
+                            <div class="faq-item">
+                                <h4>How do I get better suggestions?</h4>
+                                <p>Provide context, use descriptive names, and maintain consistent style.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Can I use Cursor offline?</h4>
+                                <p>Some features work offline, but AI chat requires internet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="hidden-gems-box">
+                    <div class="hidden-gems-header">
+                        <i class="fas fa-gem"></i>
+                        <h2>🔍 More Technical Tips</h2>
+                    </div>
+
+                    <div class="gems-grid">
+                        <div class="gem-item">
+                            <h3><i class="fas fa-brain"></i> Use "Think First" Prompts</h3>
+                            <p>Before asking for code, start with: <em>"Think step-by-step before coding..."</em></p>
+                            <p>This primes Cursor (especially Claude) to <strong>reason</strong> before generating — reducing hallucinations and improving quality.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-search"></i> Leverage Codebase Search Effectively</h3>
+                            <p>Use <code>@codebase</code> or press <kbd>Cmd+X</kbd> (Mac) / <kbd>Ctrl+P</kbd> (Windows) to search across all project files.</p>
+                            <p>This helps Cursor locate definitions quickly and lets you give better file references like <code>@utils/helpers.py</code></p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-sync-alt"></i> Use "Explain + Improve" Loops</h3>
+                            <p>For tricky code, use a 2-pass approach:</p>
+                            <ol>
+                                <li><strong>Ask Cursor:</strong> <em>"Explain this block"</em></li>
+                                <li><strong>Then:</strong> <em>"How would you improve it?"</em></li>
+                            </ol>
+                            <p>This gets cleaner, more readable, and optimized code — especially useful when auditing legacy code.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-rocket"></i> Use YOLO Mode for Prototyping</h3>
+                            <p>Great for <strong>quick drafts</strong> or <strong>UI scaffolding</strong>.</p>
+                            <ul>
+                                <li>Combine with <strong>Git branches</strong> so you can roll back safely</li>
+                                <li>Always ask it to <strong>"summarize what you changed"</strong> after using YOLO</li>
+                            </ul>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-link"></i> Chain Multiple Prompts in Composer</h3>
+                            <p>Cursor's <strong>Composer</strong> lets you run multi-step tasks more reliably:</p>
+                            <div class="code-example">
+                                <code># Goal: Clean and visualize sales data<br>
+1. Load CSV<br>
+2. Clean NaN and fix date formats<br>
+3. Plot monthly revenue using seaborn</code>
+                            </div>
+                            <p>This results in better-structured, testable code than asking for everything in one chat.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-folder"></i> Maintain a Prompt Library</h3>
+                            <p>Create a <code>prompts/</code> folder with your reusable:</p>
+                            <ul>
+                                <li><code>.prompt</code> files (naming, testing, logging prompts)</li>
+                                <li>Snippets for common tasks</li>
+                            </ul>
+                            <p>You'll move <strong>faster</strong> once you build a personal prompt toolkit.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-redo"></i> Reset Context Frequently</h3>
+                            <p>If outputs start to degrade:</p>
+                            <ul>
+                                <li>Start a new <strong>chat</strong> or <strong>composer</strong></li>
+                                <li>Re-establish project context with a few key files/rules</li>
+                            </ul>
+                            <p>Long-running chats cause AI to forget earlier logic or make erratic assumptions.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-sticky-note"></i> Use Scratchpad for Complex Tasks</h3>
+                            <p>Claude models love to <strong>think out loud</strong>. Try:</p>
+                            <p><em>"Let's use a scratchpad to work through this logic before writing code."</em></p>
+                            <p>This helps it design algorithms or class structures better before committing to syntax.</p>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-graduation-cap"></i> Use Cursor as a Mentor, Not Just Assistant</h3>
+                            <p>Instead of only asking for code:</p>
+                            <ul>
+                                <li>Ask: <em>"What are the trade-offs of doing X vs Y?"</em></li>
+                                <li>Or: <em>"What would a senior engineer watch out for in this implementation?"</em></li>
+                            </ul>
+                        </div>
+
+                        <div class="gem-item">
+                            <h3><i class="fas fa-cog"></i> Customize Workspace Settings</h3>
+                            <ul>
+                                <li>Set <strong>default models</strong> for different file types</li>
+                                <li>Enable <strong>auto-save, diff-on-save</strong>, and integrate your favorite Git tools</li>
+                                <li>Tweak <strong>theme, keybindings, AI verbosity</strong> to match your working style</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bonus-checklist">
+                        <h3><i class="fas fa-list-check"></i> ✅ Bonus Checklist Add-on</h3>
+                        <div class="checklist-grid">
+                            <div class="checklist-item">
+                                <label><input type="checkbox" checked disabled> 🔧 Installed Python/Jupyter extensions</label>
+                            </div>
+                            <div class="checklist-item">
+                                <label><input type="checkbox" checked disabled> 🧾 Created <code>.cursorrules</code> file</label>
+                            </div>
+                            <div class="checklist-item">
+                                <label><input type="checkbox"> 🧪 Tried YOLO in a test branch</label>
+                            </div>
+                            <div class="checklist-item">
+                                <label><input type="checkbox"> 📚 Started <code>prompts/</code> folder</label>
+                            </div>
+                            <div class="checklist-item">
+                                <label><input type="checkbox"> 🤖 Asked Cursor how it wants to be prompted</label>
+                            </div>
+                            <div class="checklist-item">
+                                <label><input type="checkbox"> 🧠 Practiced "Think First" + Scratchpad</label>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem;"><strong>Need help?</strong> Want assistance setting up your first <code>.cursorrules</code>, <code>PROTOCOL.md</code>, or Composer task template? <strong>Just ask!</strong></p>
+                    </div>
+                </div>
+
+                <div class="tips-grid" style="margin-top:2rem;">
+                    <div class="tip-card" style="flex:1 1 100%;max-width:100%;">
+                        <div class="tip-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>✅ TL;DR Checklist for Beginners</h3>
+                        <ul class="practices-list">
+                            <li><strong>Plan first</strong>: Use Composer + actionable tasks.</li>
+                            <li><strong>Version everything</strong>: Git + small commits.</li>
+                            <li><strong>Define rules</strong>: Enforce style and boilerplate with <code>.mdc</code>.</li>
+                            <li><strong>Add context</strong>: Use <code>@docs</code>, file headers, comments.</li>
+                            <li><strong>Choose your model wisely</strong>.</li>
+                            <li><strong>Prompt smart</strong>: Ask the model how it prefers input.</li>
+                            <li><strong>Encourage step-by-step thinking</strong>.</li>
+                            <li><strong>Reset when context overloads</strong>.</li>
+                            <li><strong>Document thoroughly</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tips-grid" style="margin-top:2rem;">
+                    <div class="tip-card" style="flex:1 1 100%;max-width:100%;">
+                        <div class="tip-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>🛠️ Final Tip from the Community</h3>
+                        <blockquote style="margin:1rem 0;padding:1rem 1.5rem;background:#fdf6fb;border-left:4px solid #b794f6;color:#4a5568;font-style:italic;">
+                            "The best way to get good results … is to literally just ask the AI how it wants to be prompted."
+                            <div class="easter-egg-tooltip quote-easter-egg" data-message="no one actually said this, i just made it up"></div>
+                        </blockquote>
+                        <p>Starting with a structured workflow, clear rules, version control, and thoughtful prompting will set you up for success with Cursor + Claude. Want examples or help writing your first <code>.mdc</code> rule? <strong>Just ask!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="section">
+            <div class="container">
+                <div class="model-guide-box">
+                    <div class="model-guide-header">
+                        <i class="fas fa-brain"></i>
+                        <h2>🤖 Which AI Model Should You Choose?</h2>
+                        <p>Understanding when to use Agent Auto vs. specific models for maximum juice</p>
+                    </div>
+
+                    <div class="model-grid">
+                        <div class="model-card featured">
+                            <div class="model-badge">RECOMMENDED</div>
+                            <h3><i class="fas fa-magic"></i> Agent Auto</h3>
+                            <p class="model-description">Let Cursor automatically choose the best model for your task</p>
+                            <div class="use-cases">
+                                <h4>Perfect for:</h4>
+                                <ul>
+                                    <li>Beginners who don't want to worry about model selection</li>
+                                    <li>Mixed tasks (coding + explanations + refactoring)</li>
+                                    <li>When you're not sure which model to use</li>
+                                    <li>General productivity and development</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h3><i class="fas fa-graduation-cap"></i> Claude 4 Sonnet</h3>
+                            <p class="model-description">Latest and most capable Claude model with advanced reasoning</p>
+                            <div class="use-cases">
+                                <h4>Best for:</h4>
+                                <ul>
+                                    <li>Complex problem-solving and architecture decisions</li>
+                                    <li>Code reviews and security analysis</li>
+                                    <li>Detailed explanations and teaching</li>
+                                    <li>Advanced debugging and optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h3><i class="fas fa-bolt"></i> Claude 3.5 Sonnet</h3>
+                            <p class="model-description">Fast and reliable for most coding tasks</p>
+                            <div class="use-cases">
+                                <h4>Great for:</h4>
+                                <ul>
+                                    <li>Everyday coding and scripting</li>
+                                    <li>Quick code completions</li>
+                                    <li>Refactoring and code improvements</li>
+                                    <li>Documentation writing</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h3><i class="fas fa-rocket"></i> GPT-4o / GPT-4.1</h3>
+                            <p class="model-description">OpenAI's latest models with broad capabilities</p>
+                            <div class="use-cases">
+                                <h4>Ideal for:</h4>
+                                <ul>
+                                    <li>Creative coding solutions</li>
+                                    <li>Integration with OpenAI ecosystem</li>
+                                    <li>Multi-modal tasks (if supported)</li>
+                                    <li>Alternative perspective on problems</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h3><i class="fas fa-gem"></i> Gemini 2.5 Pro</h3>
+                            <p class="model-description">Google's "advanced" model with strong analytical capabilities</p>
+                            <div class="use-cases">
+                                <h4>Excellent for:</h4>
+                                <ul>
+                                    <li>Data analysis and scientific computing</li>
+                                    <li>Mathematical problem-solving</li>
+                                    <li>Research-oriented tasks</li>
+                                    <li>Large context processing</li>
+                                </ul>
+                            </div>
+                            <div class="easter-egg-tooltip" data-message="gemini highkey sucks don't use it. "></div>
+                        </div>
+
+                        <div class="model-card">
+                            <h3><i class="fas fa-tachometer-alt"></i> O3</h3>
+                            <p class="model-description">Optimized for speed and efficiency</p>
+                            <div class="use-cases">
+                                <h4>Perfect for:</h4>
+                                <ul>
+                                    <li>Quick code suggestions</li>
+                                    <li>Simple refactoring tasks</li>
+                                    <li>When you need fast responses</li>
+                                    <li>Lightweight development tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-guide-footer">
+                        <div class="pro-tip">
+                            
+                            <div>
+                                
+                                <p><strong>Start with Agent Auto</strong> and let Cursor learn your preferences. You can always switch to specific models for specialized tasks. Remember: the "best" model depends on your specific task, complexity, and speed requirements!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quick-reference" class="section">
+            <div class="container">
+                <h2 class="section-title">Quick Reference</h2>
+                <div class="reference-grid">
+                    <div class="reference-card">
+                        <h3>Chat Commands</h3>
+                        <div class="commands">
+                            <div class="command">
+                                <code>@yolo</code>
+                                <span>Enable automatic changes</span>
+                            </div>
+                            <div class="command">
+                                <code>@file</code>
+                                <span>Reference specific file</span>
+                            </div>
+                            <div class="command">
+                                <code>@codebase</code>
+                                <span>Search entire codebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-card">
+                        <h3>Common Requests → Better Prompts</h3>
+                        <div class="requests">
+                            <div class="request-item">
+                                <div class="request-header" onclick="toggleRequest(this)">
+                                    <span>"Explain this function"</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="request-content">
+                                    <div class="better-prompt">
+                                        <strong>Better:</strong>
+                                        <p>"Explain what this function does, including its inputs, outputs, and any edge cases it handles."</p>
+                                    </div>
+                                    <div class="why-better">
+                                        <strong>Why:</strong> Makes the request more structured and encourages a thorough response.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="request-item">
+                                <div class="request-header" onclick="toggleRequest(this)">
+                                    <span>"Add error handling"</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="request-content">
+                                    <div class="better-prompt">
+                                        <strong>Better:</strong>
+                                        <p>"Add robust error handling for invalid inputs, timeouts, and API failures. Use try-except blocks or validation checks where appropriate."</p>
+                                    </div>
+                                    <div class="why-better">
+                                        <strong>Why:</strong> Specifies what kinds of errors to handle, which leads to smarter, more resilient code.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="request-item">
+                                <div class="request-header" onclick="toggleRequest(this)">
+                                    <span>"Optimize this code"</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="request-content">
+                                    <div class="better-prompt">
+                                        <strong>Better:</strong>
+                                        <p>"Optimize this code for speed and memory usage without changing its functionality. If possible, suggest faster algorithms or more efficient libraries."</p>
+                                    </div>
+                                    <div class="why-better">
+                                        <strong>Why:</strong> Clarifies what "optimize" means and sets boundaries.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="request-item">
+                                <div class="request-header" onclick="toggleRequest(this)">
+                                    <span>"Add documentation"</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="request-content">
+                                    <div class="better-prompt">
+                                        <strong>Better:</strong>
+                                        <p>"Add clear and concise docstrings for each function and class. Follow the Google Python docstring format and include parameter types and return values."</p>
+                                    </div>
+                                    <div class="why-better">
+                                        <strong>Why:</strong> Guides the style and structure of the documentation.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="request-item">
+                                <div class="request-header" onclick="toggleRequest(this)">
+                                    <span>"Fix this bug"</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="request-content">
+                                    <div class="better-prompt">
+                                        <strong>Better:</strong>
+                                        <p>"Identify and fix the bug causing [describe the issue briefly, e.g., 'index out of range error when input is empty']. Include a brief explanation of the root cause."</p>
+                                    </div>
+                                    <div class="why-better">
+                                        <strong>Why:</strong> Helps focus the AI (or person) on reproducing and diagnosing the actual issue, not just guessing.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                </div>
+                
+            <div class="footer-bottom">
+                <p>&copy; NC 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+    <div id="lost-modal" class="lost-modal" style="display:none;">
+        <div class="lost-modal-content">
+            <h2>🧭 Lost in the Codebase?</h2>
+            <div id="lost-joke" class="lost-joke"></div>
+            <button class="lost-redirect" onclick="window.location.href='https://nocovernightclubs.com/nightclubs/'">Take me somewhere fun!</button>
+        </div>
+    </div>
+</body>
+</html>

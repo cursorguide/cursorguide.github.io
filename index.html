@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursor Guide</title>
-<link rel="icon" type="image/x-icon" href="logo.png?v=2">
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header class="header">
@@ -26,6 +25,12 @@
                         <a href="#llm-help" class="nav-link">LLM Help</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#agent-modes" class="nav-link">Agent Modes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#github" class="nav-link">GitHub</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#notebooks" class="nav-link">Notebooks</a>
                     </li>
                     <li class="nav-item">
@@ -37,12 +42,10 @@
                     <li class="nav-item">
                         <a href="#tips" class="nav-link">Tips & Tricks</a>
                     </li>
+                    <li class="nav-item nav-moon">
+                        <a href="#" class="nav-link" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></a>
+                    </li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </div>
         </nav>
     </header>
@@ -148,7 +151,8 @@
                             <div class="chat-messages">
                                 <div class="message user">
                                     <div class="message-content">
-Write a basic Python script that, at a scheduled time, opens Supreme's website, searches for a specific item and size, and simulates adding it to the shopping cart.                                        </div>
+                                        Write a basic Python script that opens Supreme's shop at a scheduled time, searches for a specific item and size, and simulates adding it to the cart
+                                        </div>
 
                                 <div class="message ai">
                                     <div class="message-content">
@@ -160,6 +164,389 @@ Write a basic Python script that, at a scheduled time, opens Supreme's website, 
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="agent-modes" class="section">
+            <div class="container">
+                <h2 class="section-title">Agent Mode vs Composer Mode</h2>
+                <div class="agent-content">
+                    <div class="mode-comparison">
+                        <div class="mode-card">
+                            <div class="mode-header">
+                                <i class="fas fa-robot"></i>
+                                <h3>Agent Mode</h3>
+                            </div>
+                            <div class="mode-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Best for complex, multi-step tasks requiring reasoning</li>
+                                    <li><i class="fas fa-check"></i> Can browse files, understand project structure</li>
+                                    <li><i class="fas fa-check"></i> Makes decisions about what files to modify</li>
+                                    <li><i class="fas fa-check"></i> Handles tasks like "refactor the authentication system"</li>
+                                    <li><i class="fas fa-check"></i> More autonomous - you give high-level instructions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mode-card">
+                            <div class="mode-header">
+                                <i class="fas fa-edit"></i>
+                                <h3>Composer Mode (Cmd+I)</h3>
+                            </div>
+                            <div class="mode-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Better for specific, targeted edits</li>
+                                    <li><i class="fas fa-check"></i> You select code first, then give instructions</li>
+                                    <li><i class="fas fa-check"></i> More direct control over what gets changed</li>
+                                    <li><i class="fas fa-check"></i> Good for "fix this function" or "optimize this component"</li>
+                                    <li><i class="fas fa-check"></i> Faster for simple, focused tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auto-attach-section">
+                        <h3>Agent Operational Settings</h3>
+                        <div class="auto-attach-grid">
+                            <div class="attach-card">
+                                <div class="attach-header">
+                                    <i class="fas fa-rocket"></i>
+                                    <h4>🔄 Always</h4>
+                                </div>
+                                <div class="attach-content">
+                                    <p class="setting-description">Full-auto autonomous mode</p>
+                                    <ul>
+                                        <li>AI agent immediately acts on your instructions—no prompts asking for approval</li>
+                                        <li>Uses full developer capabilities: modifying files, running commands, refactoring</li>
+                                        <li>Think of it as "set it and forget it"—Cursor takes over until task's done</li>
+                                        <li>You can disable "Auto-run" or add files/commands to a deny list if too aggressive</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="attach-card">
+                                <div class="attach-header">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <h4>🧩 Auto</h4>
+                                </div>
+                                <div class="attach-content">
+                                    <p class="setting-description">Conservative mode with checks</p>
+                                    <ul>
+                                        <li>Cursor suggests changes first, then waits for your approval before applying</li>
+                                        <li>Often the default for users on paid accounts</li>
+                                        <li>Gives autonomy but with safety checks</li>
+                                        <li>Note: Some users report it might act more like Ask mode after model updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="attach-card">
+                                <div class="attach-header">
+                                    <i class="fas fa-hand-paper"></i>
+                                    <h4>🛠️ Ask / Manual</h4>
+                                </div>
+                                <div class="attach-content">
+                                    <p class="setting-description">Chat assistant mode</p>
+                                    <ul>
+                                        <li>Cursor behaves more like a chat assistant</li>
+                                        <li>Doesn't apply changes or run commands autonomously</li>
+                                        <li>You get suggestions and can use "Apply" buttons or pick manually</li>
+                                        <li>Maximum control over every edit or command</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="usage-guide">
+                        <h3>When to Use Each Mode</h3>
+                        <div class="usage-grid">
+                            <div class="usage-card">
+                                <div class="usage-header">
+                                    <i class="fas fa-rocket"></i>
+                                    <h4>🔄 Always</h4>
+                                </div>
+                                <div class="usage-content">
+                                    <ul>
+                                        <li>When you trust the agent to act on its own</li>
+                                        <li>For full automation of complex tasks</li>
+                                        <li>Building new features that touch multiple files</li>
+                                        <li>Refactoring large parts of your codebase</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="usage-card">
+                                <div class="usage-header">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <h4>🧩 Auto</h4>
+                                </div>
+                                <div class="usage-content">
+                                    <ul>
+                                        <li>When you want suggestions plus control</li>
+                                        <li>General development work</li>
+                                        <li>Medium-sized projects</li>
+                                        <li>Cursor still asks you first before applying</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="usage-card">
+                                <div class="usage-header">
+                                    <i class="fas fa-bullseye"></i>
+                                    <h4>🛠️ Ask/Manual</h4>
+                                </div>
+                                <div class="usage-content">
+                                    <ul>
+                                        <li>When you prefer to control every edit or command</li>
+                                        <li>Making specific, isolated changes</li>
+                                        <li>Working on performance-critical code</li>
+                                        <li>Want to minimize token usage/costs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip-box">
+                        <div class="pro-tip-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Pro Tip</h4>
+                        </div>
+                        <p><strong>TL;DR:</strong> Use <strong>Always</strong> when you trust the agent to act on its own—for full automation. Use <strong>Auto</strong> if you want suggestions plus control (Cursor still asks you first). Use <strong>Ask/Manual</strong> if you prefer to control every edit or command. Start with Smart Auto-Attach for most projects and adjust based on your specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="github" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">GitHub & Version Control for Beginners</h2>
+                <div class="github-content">
+                    <div class="github-intro">
+                        <h3>Why Version Control Matters</h3>
+                        <p>Version control is like a time machine for your code. It tracks changes, lets you collaborate safely, and saves you from losing work. GitHub is the most popular platform for hosting Git repositories.</p>
+                    </div>
+
+                    <div class="github-basics">
+                        <h3>Essential Git Commands</h3>
+                        <div class="commands-grid">
+                            <div class="command-card">
+                                <div class="command-header">
+                                    <i class="fas fa-download"></i>
+                                    <h4>Getting Started</h4>
+                                </div>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <kbd>git init</kbd>
+                                        <span>Initialize a new Git repository</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git clone [url]</kbd>
+                                        <span>Download a repository from GitHub</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git status</kbd>
+                                        <span>Check what files have changed</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="command-card">
+                                <div class="command-header">
+                                    <i class="fas fa-save"></i>
+                                    <h4>Saving Changes</h4>
+                                </div>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <kbd>git add .</kbd>
+                                        <span>Stage all changed files</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git commit -m "message"</kbd>
+                                        <span>Save changes with a description</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git push</kbd>
+                                        <span>Upload changes to GitHub</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="command-card">
+                                <div class="command-header">
+                                    <i class="fas fa-sync"></i>
+                                    <h4>Keeping Updated</h4>
+                                </div>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <kbd>git pull</kbd>
+                                        <span>Download latest changes</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git fetch</kbd>
+                                        <span>Check for updates without merging</span>
+                                    </div>
+                                    <div class="command-item">
+                                        <kbd>git log</kbd>
+                                        <span>View commit history</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-workflow">
+                        <h3>Basic Workflow</h3>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Make Changes</h4>
+                                    <p>Edit your files in Cursor</p>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Check Status</h4>
+                                    <p>Run <kbd>git status</kbd> to see what changed</p>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Stage Changes</h4>
+                                    <p>Run <kbd>git add .</kbd> to prepare files</p>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Commit</h4>
+                                    <p>Run <kbd>git commit -m "description"</kbd></p>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Push</h4>
+                                    <p>Run <kbd>git push</kbd> to upload to GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-features">
+                        <h3>GitHub Features in Cursor</h3>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <h4>Source Control Panel</h4>
+                                <p>View changes, stage files, and commit directly from Cursor's interface</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <h4>Git History</h4>
+                                <p>See who changed what and when, with detailed commit information</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-merge"></i>
+                                </div>
+                                <h4>Branch Management</h4>
+                                <p>Create, switch, and merge branches without leaving Cursor</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h4>Conflict Resolution</h4>
+                                <p>Visual tools to resolve merge conflicts when they occur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-tips">
+                        <h3>Pro Tips for Beginners</h3>
+                        <div class="tips-list">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Commit Often</h4>
+                                    <p>Make small, frequent commits rather than large, infrequent ones. This makes it easier to track changes and revert if needed.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Write Clear Commit Messages</h4>
+                                    <p>Use descriptive messages like "Add user authentication feature" instead of "fix stuff".</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Use Branches for New Features</h4>
+                                    <p>Create a new branch for each feature or bug fix to keep your main code clean.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Always Pull Before Pushing</h4>
+                                    <p>Run <kbd>git pull</kbd> first to avoid conflicts with others' changes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-common-issues">
+                        <h3>Common Issues & Solutions</h3>
+                        <div class="issues-grid">
+                            <div class="issue-card">
+                                <h4>❌ "Permission denied"</h4>
+                                <p><strong>Solution:</strong> Set up SSH keys or use a personal access token for authentication.</p>
+                            </div>
+                            <div class="issue-card">
+                                <h4>❌ "Merge conflict"</h4>
+                                <p><strong>Solution:</strong> Open the conflicted files, resolve differences, then commit the resolution.</p>
+                            </div>
+                            <div class="issue-card">
+                                <h4>❌ "Branch is behind"</h4>
+                                <p><strong>Solution:</strong> Run <kbd>git pull origin main</kbd> to get the latest changes.</p>
+                            </div>
+                            <div class="issue-card">
+                                <h4>❌ "Can't push to main"</h4>
+                                <p><strong>Solution:</strong> Create a pull request instead of pushing directly to main branch.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-resources">
+                        <h3>Helpful Resources</h3>
+                        <div class="resources-list">
+                            <a href="https://docs.github.com/en/get-started" class="resource-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Getting Started Guide</span>
+                            </a>
+                            <a href="https://git-scm.com/doc" class="resource-link" target="_blank">
+                                <i class="fas fa-book"></i>
+                                <span>Git Documentation</span>
+                            </a>
+                            <a href="https://github.com/git-guides" class="resource-link" target="_blank">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>GitHub Guides</span>
+                            </a>
                         </div>
                     </div>
                 </div>

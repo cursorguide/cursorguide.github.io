@@ -24,6 +24,56 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.remove('active');
         }
     });
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - initializing dark mode');
+
+    setTimeout(function() {
+        const moonNavLink = document.querySelector('.nav-moon .nav-link');
+        const moonIcon = document.querySelector('.nav-moon i');
+
+        console.log('Dark mode init - moonNavLink:', moonNavLink);
+        console.log('Dark mode init - moonIcon:', moonIcon);
+        console.log('All .nav-item elements:', document.querySelectorAll('.nav-item'));
+        console.log('.nav-moon element:', document.querySelector('.nav-moon'));
+
+        if (!moonNavLink) {
+            console.error('Could not find .nav-moon .nav-link element');
+            return;
+        }
+
+        function setDarkMode(isDark) {
+            console.log('Setting dark mode to:', isDark);
+            document.body.classList.toggle('dark-mode', isDark);
+
+            const currentIcon = document.querySelector('.nav-moon i');
+            if (currentIcon) {
+                currentIcon.classList.remove('fa-moon', 'fa-sun');
+                currentIcon.classList.add(isDark ? 'fa-sun' : 'fa-moon');
+            } else {
+                console.error('Could not find icon to update');
+            }
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        console.log('Initial dark mode from localStorage:', isDarkMode);
+        setDarkMode(isDarkMode);
+
+        moonNavLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Moon icon clicked!');
+            const isDark = !document.body.classList.contains('dark-mode');
+            console.log('Current dark mode:', document.body.classList.contains('dark-mode'));
+            console.log('Toggling to dark mode:', isDark);
+            setDarkMode(isDark);
+        });
+
+        console.log('Dark mode initialization complete');
+    }, 200);
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -347,237 +397,6 @@ document.head.appendChild(backToTopStyle);
 
 document.addEventListener('DOMContentLoaded', createBackToTopButton);
 
-function initializeDarkMode() {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.className = 'dark-mode-toggle';
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    darkModeToggle.title = 'Toggle Dark Mode';
-
-    const navContainer = document.querySelector('.nav-container');
-    if (navContainer) {
-        navContainer.appendChild(darkModeToggle);
-    }
-
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-
-        darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        localStorage.setItem('darkMode', isDark);
-    });
-}
-
-const darkModeStyle = document.createElement('style');
-darkModeStyle.textContent = `
-    .dark-mode-toggle {
-        background: none;
-        border: none;
-        color: var(--text-primary);
-        font-size: 1.2rem;
-        cursor: pointer;
-        padding: 0.5rem;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        margin-left: 1rem;
-    }
-
-    .dark-mode-toggle:hover {
-        background: var(--bg-light);
-        color: var(--primary-color);
-    }
-
-    body.dark-mode {
-        --text-primary: #ffffff;
-        --text-secondary: #e2e8f0;
-        --bg-light: #2d3748;
-        --bg-dark: #1a202c;
-        --border-color: #4a5568;
-        --primary-color: #d6bcfa;
-        --secondary-color: #fbb6ce;
-        --accent-color: #f687b3;
-        background-color: #1a202c;
-        color: #ffffff;
-    }
-
-    body.dark-mode .header {
-        background: #2d3748;
-        border-bottom: 1px solid #4a5568;
-    }
-
-    body.dark-mode .overview-card,
-    body.dark-mode .notebook-card,
-    body.dark-mode .tip-card,
-    body.dark-mode .reference-card,
-    body.dark-mode .chat-example {
-        background: #2d3748;
-        color: #ffffff;
-        border: 1px solid #4a5568;
-    }
-
-    body.dark-mode .nav-menu {
-        background: #2d3748;
-    }
-
-    body.dark-mode .section-title,
-    body.dark-mode h1,
-    body.dark-mode h2,
-    body.dark-mode h3,
-    body.dark-mode h4 {
-        color: #ffffff;
-    }
-
-    body.dark-mode .step-content h4,
-    body.dark-mode .faq-item h4 {
-        color: #d6bcfa;
-    }
-
-    body.dark-mode .message.user .message-content {
-        background: #4a5568;
-        color: #ffffff;
-    }
-
-    body.dark-mode .message.ai .message-content {
-        background: #2d3748;
-        color: #ffffff;
-        border: 1px solid #4a5568;
-    }
-
-    body.dark-mode kbd {
-        background: #3c366b;
-        border: 1px solid #b794f6;
-        color: #fbb6ce;
-        box-shadow: 0 1px 2px rgba(183, 148, 246, 0.2);
-    }
-
-    body.dark-mode .warning-box {
-        background: #b7791f;
-        color: #fff;
-        border: 1px solid #f6e05e;
-    }
-    body.dark-mode .warning-box h4 {
-        color: #fff;
-    }
-    body.dark-mode .warning-box p {
-        color: #fff;
-    }
-    body.dark-mode .warning-box i {
-        color: #f6e05e;
-    }
-
-    body.dark-mode .hero {
-        background: #23263a;
-        color: #fff;
-    }
-    body.dark-mode .hero-title, 
-    body.dark-mode .hero-subtitle {
-        color: #fff;
-    }
-    body.dark-mode .highlight {
-        color: #fbb6ce;
-    }
-    body.dark-mode .btn-primary {
-        background: #b794f6;
-        color: #23263a;
-    }
-    body.dark-mode .btn-primary:hover {
-        background: #fbb6ce;
-        color: #23263a;
-    }
-    body.dark-mode .btn-secondary {
-        background: transparent;
-        color: #b794f6;
-        border-color: #b794f6;
-    }
-    body.dark-mode .btn-secondary:hover {
-        background: #b794f6;
-        color: #23263a;
-    }
-
-    body.dark-mode .model-guide-box {
-        background: linear-gradient(135deg, #553c9a 0%, #7c4dff 100%);
-    }
-
-    body.dark-mode .model-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    body.dark-mode .model-card:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    body.dark-mode .model-card.featured {
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    body.dark-mode .hidden-gems-box {
-        background: linear-gradient(135deg, #2d1b69 0%, #5b21b6 100%);
-        border-color: rgba(183, 148, 246, 0.5);
-    }
-
-    body.dark-mode .gem-item {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(183, 148, 246, 0.3);
-    }
-
-    body.dark-mode .gem-item:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(183, 148, 246, 0.5);
-    }
-
-    body.dark-mode .bonus-checklist {
-        background: rgba(183, 148, 246, 0.15);
-        border-color: rgba(183, 148, 246, 0.4);
-    }
-
-    body.dark-mode .easter-egg-tooltip::after {
-        background: #2d1b69;
-        color: #fbb6ce;
-        border-color: #d6bcfa;
-    }
-
-    body.dark-mode .code-easter-egg::after {
-        background: #1a1a1a;
-        color: #e2e8f0;
-        border-color: #b794f6;
-    }
-
-    body.dark-mode .quote-easter-egg::after {
-        background: #7c4dff;
-        color: #ffffff;
-        border-color: #fbb6ce;
-    }
-
-    body.dark-mode .warning-box .easter-egg-tooltip::after {
-        background: #d97706;
-        color: #ffffff;
-        border-color: #f59e0b;
-    }
-
-    body.dark-mode .model-card .easter-egg-tooltip::after {
-        background: #dc2626;
-        color: #ffffff;
-        border-color: #ef4444;
-    }
-
-    @media (max-width: 768px) {
-        .dark-mode-toggle {
-            margin-left: 0;
-            margin-right: 1rem;
-        }
-    }
-`;
-document.head.appendChild(darkModeStyle);
-
-document.addEventListener('DOMContentLoaded', initializeDarkMode);
-
 const printStyle = document.createElement('style');
 printStyle.textContent = `
     @media print {
@@ -802,3 +621,167 @@ if (lostModal) {
     if (e.target === lostModal) hideLostModal();
   });
 }
+
+const darkModeStyle = document.createElement('style');
+darkModeStyle.textContent = `
+    body.dark-mode {
+        --text-primary: #ffffff;
+        --text-secondary: #e2e8f0;
+        --bg-light: #2d3748;
+        --bg-dark: #1a202c;
+        --border-color: #4a5568;
+        --primary-color: #d6bcfa;
+        --secondary-color: #fbb6ce;
+        --accent-color: #f687b3;
+        background-color: #1a202c;
+        color: #ffffff;
+    }
+
+    body.dark-mode .header {
+        background: #2d3748;
+        border-bottom: 1px solid #4a5568;
+    }
+
+    body.dark-mode .overview-card,
+    body.dark-mode .notebook-card,
+    body.dark-mode .tip-card,
+    body.dark-mode .reference-card,
+    body.dark-mode .chat-example,
+    body.dark-mode .mode-card,
+    body.dark-mode .attach-card,
+    body.dark-mode .usage-card,
+    body.dark-mode .command-card,
+    body.dark-mode .workflow-step,
+    body.dark-mode .feature-card,
+    body.dark-mode .tip-item,
+    body.dark-mode .issue-card {
+        background: #2d3748;
+        color: #ffffff;
+        border: 1px solid #4a5568;
+    }
+
+    body.dark-mode .section-title,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4 {
+        color: #ffffff;
+    }
+
+    body.dark-mode .step-content h4,
+    body.dark-mode .faq-item h4 {
+        color: #d6bcfa;
+    }
+
+    body.dark-mode .message.user .message-content {
+        background: #4a5568;
+        color: #ffffff;
+    }
+
+    body.dark-mode .message.ai .message-content {
+        background: #2d3748;
+        color: #ffffff;
+        border: 1px solid #4a5568;
+    }
+
+    body.dark-mode kbd {
+        background: #3c366b;
+        border: 1px solid #b794f6;
+        color: #fbb6ce;
+        box-shadow: 0 1px 2px rgba(183, 148, 246, 0.2);
+    }
+
+    body.dark-mode .warning-box {
+        background: #b7791f;
+        color: #fff;
+        border: 1px solid #f6e05e;
+    }
+
+    body.dark-mode .warning-box h4,
+    body.dark-mode .warning-box p {
+        color: #fff;
+    }
+
+    body.dark-mode .warning-box i {
+        color: #f6e05e;
+    }
+
+    body.dark-mode .hero {
+        background: #23263a;
+        color: #fff;
+    }
+
+    body.dark-mode .hero-title, 
+    body.dark-mode .hero-subtitle {
+        color: #fff;
+    }
+
+    body.dark-mode .highlight {
+        color: #fbb6ce;
+    }
+
+    body.dark-mode .btn-primary {
+        background: #b794f6;
+        color: #23263a;
+    }
+
+    body.dark-mode .btn-primary:hover {
+        background: #fbb6ce;
+        color: #23263a;
+    }
+
+    body.dark-mode .btn-secondary {
+        background: transparent;
+        color: #b794f6;
+        border-color: #b794f6;
+    }
+
+    body.dark-mode .btn-secondary:hover {
+        background: #b794f6;
+        color: #23263a;
+    }
+
+    body.dark-mode .model-guide-box {
+        background: linear-gradient(135deg, #553c9a 0%, #7c4dff 100%);
+    }
+
+    body.dark-mode .model-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .model-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .model-card.featured {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .hidden-gems-box {
+        background: linear-gradient(135deg, #2d1b69 0%, #5b21b6 100%);
+        border-color: rgba(183, 148, 246, 0.5);
+    }
+
+    body.dark-mode .gem-item {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(183, 148, 246, 0.3);
+    }
+
+    body.dark-mode .gem-item:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(183, 148, 246, 0.5);
+    }
+
+    body.dark-mode .bonus-checklist {
+        background: rgba(183, 148, 246, 0.15);
+        border-color: rgba(183, 148, 246, 0.4);
+    }
+
+    body.dark-mode .pro-tip-box {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(183, 148, 246, 0.4);
+    }
+`;
+document.head.appendChild(darkModeStyle);

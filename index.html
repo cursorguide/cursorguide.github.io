@@ -333,6 +333,158 @@
                         <p>Version control is like a time machine for your code. It tracks changes, lets you collaborate safely, and saves you from losing work. GitHub is the most popular platform for hosting Git repositories.</p>
                     </div>
 
+                    <div class="github-beginner-guide">
+                        <h3>🚀 Getting Started: Browser-Based Workflow</h3>
+                        <p class="guide-intro">New to GitHub? Start here! This guide focuses on using GitHub entirely in your browser—no command line required.</p>
+                        
+                        <div class="beginner-steps">
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">1</div>
+                                    <h4>Logging In</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p><strong>First, let's get you logged in:</strong></p>
+                                    <ol>
+                                        <li>Connect to your company VPN (if required)</li>
+                                        <li>Go to <code>github.com/login</code></li>
+                                        <li>Enter your username (usually <code>firstname.lastname_company</code>)</li>
+                                        <li>You'll be redirected to your company's SSO login</li>
+                                        <li>Enter your normal company credentials</li>
+                                    </ol>
+                                    <p>After that, you're in your organization's GitHub!</p>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">2</div>
+                                    <h4>What is a Repository?</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Think of a repository as a <strong>smart project folder</strong>:</p>
+                                    <ul>
+                                        <li>It holds your files and folders</li>
+                                        <li>It remembers every version of your work</li>
+                                        <li>It lets you collaborate with others safely</li>
+                                        <li>It's like a shared filing cabinet that never forgets</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">3</div>
+                                    <h4>Creating Your First Repository</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p><strong>When you're logged in:</strong></p>
+                                    <ol>
+                                        <li>Click the green <strong>New Repository</strong> button</li>
+                                        <li>Choose the Owner (you or your organization)</li>
+                                        <li>Name your repo—keep it simple like <code>my-first-project</code></li>
+                                        <li>Add a short description (optional)</li>
+                                        <li>Set it to <strong>Private</strong> for internal work</li>
+                                        <li>Check <strong>Add a README</strong> so it's not empty</li>
+                                        <li>Click <strong>Create repository</strong></li>
+                                    </ol>
+                                    <p> Done! You now have your first repository.</p>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">4</div>
+                                    <h4>Uploading Files in the Browser</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p><strong>No command line needed!</strong> Here's how to upload existing files:</p>
+                                    <ol>
+                                        <li>Go into your repository</li>
+                                        <li>Click <strong>Add file → Upload files</strong></li>
+                                        <li>Drag and drop your files or click to browse</li>
+                                        <li>Add a commit message like "Add initial files"</li>
+                                        <li>Click <strong>Commit changes</strong></li>
+                                    </ol>
+                                    <p>That's it! Your files are now saved and versioned on GitHub.</p>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">5</div>
+                                    <h4>Creating Folders</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p><strong>GitHub doesn't allow empty folders.</strong> To create one:</p>
+                                    <ol>
+                                        <li>Click <strong>Add file → Create new file</strong></li>
+                                        <li>In the filename box, type <code>foldername/README.md</code></li>
+                                        <li>Add some content to the README file</li>
+                                        <li>Click <strong>Commit changes</strong></li>
+                                    </ol>
+                                    <p>GitHub will create the folder and put the README file inside it.</p>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">6</div>
+                                    <h4>What is Cloning? (Optional)</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>So far, we've used GitHub entirely in the browser. But sometimes you want a copy on your computer:</p>
+                                    <ul>
+                                        <li><strong>Cloning</strong> downloads the repository to your machine</li>
+                                        <li>Click the green <strong>Code</strong> button in any repo</li>
+                                        <li>Copy the URL and run <kbd>git clone [URL]</kbd> in terminal</li>
+                                        <li>This lets you work offline and use local tools</li>
+                                    </ul>
+                                    <p><em>For most beginners, browser uploads are perfect!</em></p>
+                                </div>
+                            </div>
+
+                            <div class="beginner-step">
+                                <div class="step-header">
+                                    <div class="step-number">7</div>
+                                    <h4>What is Branching? (Optional)</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Branching creates a <strong>safe copy</strong> of your repository:</p>
+                                    <ul>
+                                        <li>The main version is called <code>main</code> or <code>master</code></li>
+                                        <li>A branch is like a sandbox for trying changes</li>
+                                        <li>When you're done, you can merge your branch back into main</li>
+                                        <li>Example: Create a <code>docs-update</code> branch to safely edit documentation</li>
+                                    </ul>
+                                    <p><em>For simple uploads, you can stay on the main branch.</em></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="beginner-summary">
+                            <h4>🎯 Quick Summary</h4>
+                            <ul>
+                                <li>✅ Connect to VPN, log in with company SSO</li>
+                                <li>✅ Create a repository for your project</li>
+                                <li>✅ Upload files directly in the browser</li>
+                                <li>✅ Only use cloning if you want a local copy</li>
+                                <li>✅ Use branches if you need a safe test version</li>
+                            </ul>
+                            <p><strong>That's really all you need to start!</strong></p>
+                            
+                            <div class="slides-download">
+                                <h5>📊 Want Visual Aids?</h5>
+                                <p>Download the accompanying slides for step-by-step screenshots and visual guides.</p>
+                                <a href="https://drive.google.com/file/d/1d56muD_pubWka2tzrY8jBP9NsFvx0uCH/view?usp=sharing" 
+                                   class="btn btn-primary" target="_blank">
+                                    <i class="fas fa-download"></i>
+                                    Download Slides
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="github-basics">
                         <h3>Essential Git Commands</h3>
                         <div class="commands-grid">

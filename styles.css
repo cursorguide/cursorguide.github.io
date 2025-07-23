@@ -2372,3 +2372,283 @@ html {
         width: 100%;
     }
 }
+
+.github-beginner-guide {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border-radius: 16px;
+    border: 1px solid #fbcfe8;
+}
+
+.github-beginner-guide h3 {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guide-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.beginner-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.beginner-step {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(183, 148, 246, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.beginner-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(183, 148, 246, 0.2);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-header h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.step-content {
+    color: var(--text-secondary);
+}
+
+.step-content p {
+    margin-bottom: 1rem;
+}
+
+.step-content strong {
+    color: var(--text-primary);
+}
+
+.step-content ol,
+.step-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.step-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.step-content code {
+    background: #f1f5f9;
+    color: var(--primary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.step-content kbd {
+    background: #2d3748;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.beginner-summary {
+    background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid #81e6d9;
+}
+
+.beginner-summary h4 {
+    color: #2c7a7b;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.beginner-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.beginner-summary li {
+    color: #2c7a7b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.beginner-summary p {
+    color: #2c7a7b;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.slides-download {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #81e6d9;
+}
+
+.slides-download h5 {
+    color: #2c7a7b;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.slides-download p {
+    color: #2c7a7b;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.slides-download .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .slides-download {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .slides-download .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .github-beginner-guide {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .beginner-step {
+        padding: 1rem;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .step-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    
+    .step-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .beginner-summary {
+        padding: 1rem;
+    }
+}
+
+body.dark-mode .github-beginner-guide {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    border: 1px solid #4a5568;
+}
+
+body.dark-mode .beginner-step {
+    background: #1a202c;
+    border: 1px solid #2d3748;
+    color: #e2e8f0;
+}
+
+body.dark-mode .beginner-step:hover {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode .step-header h4 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .step-content {
+    color: #a0aec0;
+}
+
+body.dark-mode .step-content strong {
+    color: #e2e8f0;
+}
+
+body.dark-mode .step-content li {
+    color: #a0aec0;
+}
+
+body.dark-mode .step-content code {
+    background: #2d3748;
+    color: #90cdf4;
+}
+
+body.dark-mode .beginner-summary {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border: 1px solid #4a5568;
+}
+
+body.dark-mode .beginner-summary h4,
+body.dark-mode .beginner-summary h5 {
+    color: #90cdf4;
+}
+
+body.dark-mode .beginner-summary p,
+body.dark-mode .beginner-summary li {
+    color: #a0aec0;
+}
+
+body.dark-mode .slides-download {
+    border-top-color: #4a5568;
+}
+
+body.dark-mode .slides-download h5 {
+    color: #90cdf4;
+}
+
+body.dark-mode .slides-download p {
+    color: #a0aec0;
+}
